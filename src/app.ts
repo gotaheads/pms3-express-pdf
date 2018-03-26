@@ -2,7 +2,7 @@ require('dotenv').config();
 
 import * as express from "express";
 // Routes
-import { index } from "./routes/index";
+import { index } from "./generators/index";
 
 // Create Express server
 export const app = express();
