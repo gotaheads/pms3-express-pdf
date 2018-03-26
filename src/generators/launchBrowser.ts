@@ -1,6 +1,5 @@
-import puppeteer = require("puppeteer");
-
-//import * as puppeteer from "puppeteer";
+//import puppeteer = require("puppeteer");
+import * as puppeteer from 'puppeteer';
 
 const launchBrowser = async () => {
   const browser = await puppeteer.launch({
