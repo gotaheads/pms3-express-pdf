@@ -1,5 +1,78 @@
 
+http://localhost:3100/auth/login
+
+# ts
+https://github.com/microsoftgraph/msgraph-typescript-typings
+
+# node or angular or react
+
+https://github.com/microsoftgraph?language=javascript&query=xamarin&utf8=%E2%9C%93
+https://github.com/microsoftgraph/angular-connect-sample
+https://github.com/microsoftgraph/angular-connect-rest-sample
+
+# Onedrive docs
+https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/resources/onedrive
+
+# OneDrive via oauth2 + rest
+https://gist.github.com/tanaikech/22bfb05e61f0afb8beed29dd668bdce9
+
+
+# Express API
+
 https://github.com/greenroach/express-ts-template.git
+
+Valuation API
+Display name
+Valuation API
+Application type
+Web app / API
+Home page
+http://localhost:8000
+Application ID
+4d24cd1b-4b05-47f6-95e7-b9b6a57a81fa
+Object ID
+ec81acaa-19bc-481c-a8c2-9787870c2621
+Managed application in local directory
+Valuation API
+cm9srnTI61xfnxWraeBTvTD9KhwYQnKlf43iutcA+nY=
+
+# Error
+Request Id: 437818f2-0d57-47eb-a8ed-4d691acb0200
+Correlation Id: 9de99799-69e6-4544-9983-a9311bcbb0b4
+Timestamp: 2018-03-27T00:22:41Z
+Message: AADSTS50011: No reply address is registered for the application.
+
+# Solution
+I fixed this by going to your application:
+apps.dev.microsoft.com
+
+Click the "Edit Application Manifest" button.
+Add
+"http://localhost:3978/api/OAuthCallback"
+to the replyUrls element.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Express TypeScript template
 
