@@ -11,12 +11,14 @@ export const index = Router();
 index.get('/login',
   passport.authenticate('azuread-openidconnect', {failureRedirect: '/'}),
   (req, res) => {
-    console.log('/login  redirect to /');
+    const year = prop('year', req.params);
+    console.log('/login  redirect to / year: %s ', year);
     res.redirect('/');
 });
 
 
 const url = 'http://localhost:9000/#/dashboard';
+'#/valuations/select/{{year}}';
 
 index.get('/token',
   passport.authenticate('azuread-openidconnect', {failureRedirect: '/'}),
@@ -28,7 +30,7 @@ index.get('/token',
       console.log('/token user: %j, redirecting to ', req.user, url);
       //res.redirect(`${url}/?token=${req.user.accessToken}`);
       res.send(`<html>
-                  <script>//window.location.href = ('${url}');</script>
+                  <script>window.location.href = '${url}?token=${req.user.accessToken}';</script>
                   <a href="${url}">Continue</a>
                </html>`)
       //res.json({text: 'success'});

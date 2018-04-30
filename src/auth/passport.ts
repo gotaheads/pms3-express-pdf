@@ -28,12 +28,14 @@ passport.use(new OIDCStrategy(creds, callback));
 
 const users: any = {};
 passport.serializeUser((user, done) => {
+  console.log('passport.deserializeUser user: %j', user);
   const id: string = uuid.v4();
   users[id] = user;
   done(null, id);
 });
 
 passport.deserializeUser((id: string, done) => {
+  console.log('passport.deserializeUser id: %s', id);
   const user = users[id];
   done(null, user);
 });
