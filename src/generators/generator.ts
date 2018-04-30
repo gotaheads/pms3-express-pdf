@@ -5,10 +5,13 @@ import {generateReport} from "./generateReport";
 import {savePdf} from "./savePdf";
 
 
-const generator = async () => {
+const generator = async (year: number, landlordNumber: number) => {
+  console.log('generator year: %s, landlordNumber: %s', year, landlordNumber);
+
   const env = process.env;
   const baseUrl = !!env.PMS3_URL?env.PMS3_URL:'http://d361253.u161.fasthit.net/coldfusion/pms3';
-  const url = baseUrl + '/#/valuation-report-by-landlord/2017/81';
+
+  const url = `${baseUrl}/#/valuation-report-by-landlord/${year}/${landlordNumber}`;
 
   const path = '/tmp/report.pdf';
 

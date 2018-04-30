@@ -23,6 +23,7 @@
 		"@types/cors": "^2.8.3",
 		"@types/express-session": "^1.15.8",
 		"@types/passport": "^0.4.4",
+		"@types/ramda": "^0.25.24",
 		"@types/superagent": "^3.5.7",
 		"@types/uuid": "^3.4.3",
 		"cookie-parser": "^1.4.3",
