@@ -1,5 +1,6 @@
+import {Browser} from "puppeteer";
 
-const gotoApp = async (browser, baseUrl) => {
+const gotoApp = async (browser: Browser, baseUrl: string) => {
   console.log('gotoApp baseUrl: %s', baseUrl);
 
   const page = await browser.newPage();

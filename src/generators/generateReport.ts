@@ -1,5 +1,6 @@
+import {Browser} from "puppeteer";
 
-const generateReport = async (browser, url: string) => {
+const generateReport = async (browser: Browser, url: string) => {
   console.log('generateReport url: ', url);
   const page = await browser.newPage();
   await page.goto(url, {waitUntil: 'networkidle0'});

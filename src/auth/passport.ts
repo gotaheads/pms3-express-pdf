@@ -16,7 +16,7 @@ import * as uuid from 'uuid';
 // const server = https.createServer(certConfig, app);
 
 // authentication setup
-const callback = (iss, sub, profile, accessToken, refreshToken, done) => {
+const callback = (iss: any, sub: any, profile: any, accessToken: string, refreshToken: string, done: any) => {
   done(null, {
     profile,
     accessToken,
