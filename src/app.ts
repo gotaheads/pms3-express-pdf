@@ -18,8 +18,11 @@ import { checkAuth } from './auth/app-check-auth';
 // Create Express server
 export const app = express();
 
-var allowedOrigins = ['http://localhost:9000',
-  'http://localhost:9000'];
+var allowedOrigins =
+  [
+    'http://localhost:9000',
+    'http://localhost:9000'
+  ];
 
 app.use(cors({
   origin: (origin, callback) => {
