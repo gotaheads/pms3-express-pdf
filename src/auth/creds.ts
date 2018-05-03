@@ -11,5 +11,5 @@ const creds = {
   responseMode: 'query',
   scope: ['User.Read', 'Mail.Send', 'Files.ReadWrite']
 };
-
+console.log('creds: %j', creds);
 export { creds }
