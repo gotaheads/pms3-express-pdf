@@ -34,6 +34,7 @@ app.use(cors({
     if(allowedOrigins.indexOf(origin) === -1 ){
       const msg = 'The CORS policy for this site does not ' +
         'allow access from the specified Origin.';
+      console.log('cors error: %s', msg)
       return callback(new Error(msg), false);
     }
 
