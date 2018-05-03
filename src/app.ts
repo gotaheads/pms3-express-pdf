@@ -21,7 +21,7 @@ export const app = express();
 var allowedOrigins =
   [
     'http://localhost:9000',
-    'http://localhost:9000'
+    'https://pms.nakanoya.com.au'
   ];
 
 app.use(cors({
