@@ -42,6 +42,7 @@ app.use(cors({
   },
   credentials: true
 }));
+
 app.use(cookieParser());
 app.use(session({
   secret: '12345QWERTY20188-SECRET',
