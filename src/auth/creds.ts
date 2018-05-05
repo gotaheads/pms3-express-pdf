@@ -1,14 +1,18 @@
+const env = process.env;
+import R = require('ramda');
+const { equals } = R;
 
+const isTrue = (val: string): boolean => equals(val, 'true');
 const creds = {
-  redirectUrl: 'http://localhost:3100/auth/token',
-  clientID: '7f21a44c-e367-41ab-b6be-8f3bb1c59e6a',
-  clientSecret: 'bbAXOZJO931);(~dzrwjU34',
+  redirectUrl: env.CREDS_REDIRECT_URL,
+  clientID: env.CREDS_CLIENT_ID,
+  clientSecret: env.CREDS_CLIENT_SECRET,
   identityMetadata: 'https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration',
-  allowHttpForRedirectUrl: true, // For development only
+  allowHttpForRedirectUrl: isTrue(env.CREDS_ALLOW_HTTP_FOR_REDIRECT_URl), // For development only
   responseType: 'code',
-  validateIssuer: false, // For development only
+  validateIssuer: isTrue(env.CREDS_VALIDATE_ISSUER), // For development only
   responseMode: 'query',
   scope: ['User.Read', 'Mail.Send', 'Files.ReadWrite']
 };
-
+console.log('creds: %j', creds);
 export { creds }
