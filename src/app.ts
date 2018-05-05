@@ -21,7 +21,7 @@ export const app = express();
 var allowedOrigins =
   [
     'http://localhost:9000',
-    'https://pms.nakanoya.com.au'
+    'http://d361253.u161.fasthit.net'
   ];
 
 app.use(cors({
