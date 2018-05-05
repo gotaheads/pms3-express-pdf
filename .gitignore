@@ -1,6 +1,7 @@
 # API keys and secrets
 .env
 *.env
+pms.env
 
 # Dependency directory
 node_modules
