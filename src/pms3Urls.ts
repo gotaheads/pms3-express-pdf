@@ -1,5 +1,9 @@
 
 const env = process.env;
-const dashbaordURl = `${env.PMS3_URL}/#/dashboard`;
+const baseUrl = env.PMS3_URL;
+const loginUrl = `${baseUrl}/#/login`;
+const dashbaordUrl = `${baseUrl}/#/dashboard`;
+const valuationReportByLandlordUrl = (year: number, landlordNumber: number): string =>
+  `${baseUrl}/#/valuation-report-by-landlord/${year}/${landlordNumber}`;
 
-export { dashbaordURl }
+export { dashbaordUrl, valuationReportByLandlordUrl, loginUrl }

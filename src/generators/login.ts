@@ -12,7 +12,7 @@ const login = async (page: any, username: string, password: string) => {
   await page.keyboard.type(password);
   await page.click(BUTTON_SELECTOR);
   await page.waitFor(7*1000);
-  //await page.screenshot({path: 'login.png'});
+  await page.screenshot({path: '/tmp/login.png'});
   //await page.close();
   return page;
 }

@@ -3,7 +3,7 @@ import {getUserData} from '../graph/index';
 import * as passport from 'passport';
 
 import R = require('ramda');
-import {dashbaordURl} from "../pms3Urls";
+import {dashbaordUrl} from "../pms3Urls";
 const { isNil, prop } = R;
 
 export const index = Router();
@@ -26,10 +26,10 @@ index.get('/token',
     getUserData(req.user.accessToken).then((user: any) => {
       req.user.profile.displayName = user.body.displayName;
       req.user.profile.emails = [{address: user.body.mail || user.body.userPrincipalName}];
-      console.log('/token user: %j, redirecting to ', req.user, dashbaordURl);
+      console.log('/token user: %j, redirecting to ', req.user, dashbaordUrl);
       res.send(`<html>
-                  <script>window.location.href = '${dashbaordURl}?token=${req.user.accessToken}';</script>
-                  <a href="${dashbaordURl}">Continue</a>
+                  <script>window.location.href = '${dashbaordUrl}?token=${req.user.accessToken}';</script>
+                  <a href="${dashbaordUrl}">Continue</a>
                </html>`)
 
       //res.redirect(`${url}/?token=${req.user.accessToken}`);
