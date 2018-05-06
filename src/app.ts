@@ -1,3 +1,5 @@
+import {allowedOrigins} from "./allowedOrigins";
+
 require('dotenv').config();
 
 import * as express from 'express';
@@ -11,37 +13,14 @@ import { passport } from './auth/passport';
 import { index as generators } from './generators/index';
 import { index as auth } from './auth/index';
 
-//import unless = require('express-unless');
 import { checkAuth } from './auth/app-check-auth';
+import {corsOptions} from "./corsOptions";
+//import unless = require('express-unless');
 //checkAuth.unless = unless;
 
 // Create Express server
 export const app = express();
-
-var allowedOrigins =
-  [
-    'http://localhost:9000',
-    'http://d361253.u161.fasthit.net'
-  ];
-
-app.use(cors({
-  origin: (origin, callback) => {
-    console.log('cors origin: [%s], allowedOrigins: %j', origin, allowedOrigins, allowedOrigins.indexOf(origin))
-    // allow requests with no origin
-    // (like mobile apps or curl requests)
-    if(!origin) return callback(null, true);
-
-    if(allowedOrigins.indexOf(origin) === -1 ){
-      const msg = 'The CORS policy for this site does not ' +
-        'allow access from the specified Origin.';
-      console.log('cors error: %s', msg)
-      return callback(new Error(msg), false);
-    }
-
-    return callback(null, true);
-  },
-  credentials: true
-}));
+app.use(cors(corsOptions));
 
 app.use(cookieParser());
 app.use(session({
@@ -54,12 +33,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 // Express configuration
 app.set('port', process.env.PORT || 3000);
 
 //.unless({ path: ['/auth']})
 app.use('/generators', checkAuth);
 app.use('/generators', generators);
-
 app.use('/auth', auth);

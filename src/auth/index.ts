@@ -3,6 +3,7 @@ import {getUserData} from '../graph/index';
 import * as passport from 'passport';
 
 import R = require('ramda');
+import {dashbaordURl} from "../pms3Urls";
 const { isNil, prop } = R;
 
 export const index = Router();
@@ -16,9 +17,7 @@ index.get('/login',
     res.redirect('/');
 });
 
-
-const url = 'http://localhost:9000/#/dashboard';
-'#/valuations/select/{{year}}';
+//'#/valuations/select/{{year}}';
 
 index.get('/token',
   passport.authenticate('azuread-openidconnect', {failureRedirect: '/'}),
@@ -27,15 +26,14 @@ index.get('/token',
     getUserData(req.user.accessToken).then((user: any) => {
       req.user.profile.displayName = user.body.displayName;
       req.user.profile.emails = [{address: user.body.mail || user.body.userPrincipalName}];
-      console.log('/token user: %j, redirecting to ', req.user, url);
-      //res.redirect(`${url}/?token=${req.user.accessToken}`);
+      console.log('/token user: %j, redirecting to ', req.user, dashbaordURl);
       res.send(`<html>
-                  <script>window.location.href = '${url}?token=${req.user.accessToken}';</script>
-                  <a href="${url}">Continue</a>
+                  <script>window.location.href = '${dashbaordURl}?token=${req.user.accessToken}';</script>
+                  <a href="${dashbaordURl}">Continue</a>
                </html>`)
-      //res.json({text: 'success'});
-      // renderSendMail(req, res);
-      // renderError(err, res);
 
+      //res.redirect(`${url}/?token=${req.user.accessToken}`);
+      //res.json({text: 'success'});
+      // renderError(err, res);
     });
   });
