@@ -11,7 +11,7 @@ index.get('/token',
     getUserData(req.user.accessToken).then((user: any) => {
       req.user.profile.displayName = user.body.displayName;
       req.user.profile.emails = [{address: user.body.mail || user.body.userPrincipalName}];
-      console.log('/token user: %j, redirecting to ', req.user, dashbaordURl);
+      console.log('/token redirecting to: %s, user: %s', dashbaordURl, req.user);
       res.redirect(dashbaordURl);
     });
   });
