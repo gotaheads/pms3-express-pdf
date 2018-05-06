@@ -1,11 +1,11 @@
 import {index} from "./index";
 import {Request, Response} from "express";
 import R = require('ramda');
-const { isNil, prop } = R;
+const { isNil, prop, path } = R;
 
 index.get('/authenticated', (req: Request, res: Response) => {
   const authenticated = isAuthenticated(req);
-  console.log('/authenticated isAuthenticated: %s, user: %j', authenticated, prop('user', req));
+  console.log('/authenticated isAuthenticated: %s, user: %s', authenticated, path(['user','profile','displayName'], req));
   res.json({authenticated: authenticated});
 });
 

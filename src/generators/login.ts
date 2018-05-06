@@ -5,7 +5,7 @@ const login = async (page: any, username: string, password: string) => {
   const USERNAME_SELECTOR = '#username';
   const PASSWORD_SELECTOR = '#password';
   const BUTTON_SELECTOR = '#loginButton';
-
+  await page.screenshot({path: '/tmp/login.png'});
   await page.click(USERNAME_SELECTOR);
   await page.keyboard.type(username);
   await page.click(PASSWORD_SELECTOR);
