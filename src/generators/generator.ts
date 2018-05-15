@@ -10,11 +10,10 @@ const generator = async (year: number, landlordNumber: number) => {
   console.log('generator year: %s, landlordNumber: %s', year, landlordNumber);
 
   const env = process.env;
-  const baseUrl = !!env.PMS3_URL?env.PMS3_URL:'http://d361253.u161.fasthit.net/coldfusion/pms3';
 
   const url = valuationReportByLandlordUrl(year, landlordNumber);
 
-  const path = '/tmp/report.pdf';
+  const path = `/tmp/valuation-report-${year}-${landlordNumber}.pdf`;
 
   const browser = await launchBrowser();
 

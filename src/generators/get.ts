@@ -8,9 +8,6 @@ import {PassportRequest} from "../auth/passports";
 
 const { isNil, prop } = R;
 
-/**
- * GET /
- */
 const get = asyncHandler(async (req: PassportRequest, res: Response) => {
   const year: number = +prop('year', req.query),
    landlordNumber: number = +prop('number', req.query);
@@ -19,8 +16,8 @@ const get = asyncHandler(async (req: PassportRequest, res: Response) => {
     'year: %s, landlordNumber: %s', isAuthenticated(req), req.user, year, landlordNumber);
 
 	const path = await generator(year, landlordNumber);
+
   res.download(path);
-  //res.json({ello:'hi world'});
 });
 
 export { get }
