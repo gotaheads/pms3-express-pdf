@@ -1,6 +1,6 @@
 const env = process.env;
 import R = require('ramda');
-const { equals } = R;
+const { equals, prop } = R;
 
 const isTrue = (val: string): boolean => equals(val, 'true');
 const creds = {
@@ -14,5 +14,5 @@ const creds = {
   responseMode: 'query',
   scope: ['User.Read', 'Mail.Send', 'Files.ReadWrite']
 };
-console.log('creds: %j', creds);
+console.log('creds redirectUrl: %s', prop('redirectUrl', creds));
 export { creds }

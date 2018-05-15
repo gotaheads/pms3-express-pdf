@@ -3,6 +3,7 @@ const OIDCStrategy = passportAzureAd.OIDCStrategy;
 import * as passport from 'passport';
 import { creds } from './creds';
 import * as uuid from 'uuid';
+import {getDisplayName} from "./getDisplayName";
 
 // **IMPORTANT
 // Note that production apps will need to create a self-signed cert and use a secure server,
@@ -28,7 +29,7 @@ passport.use(new OIDCStrategy(creds, callback));
 
 const users: any = {};
 passport.serializeUser((user, done) => {
-  console.log('passport.deserializeUser user: %j', user);
+  console.log('passport.deserializeUser user: %s', getDisplayName(user));
   const id: string = uuid.v4();
   users[id] = user;
   done(null, id);
