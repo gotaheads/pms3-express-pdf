@@ -1,5 +1,3 @@
-import {allowedOrigins} from "./allowedOrigins";
-
 require('dotenv').config();
 
 import * as express from 'express';
@@ -7,13 +5,12 @@ import * as cors from 'cors';
 import * as cookieParser from 'cookie-parser';
 import * as session from 'express-session';
 
-import { passport } from './auth/passport';
-
+import {passport} from './auth/passport';
 // Routes
-import { index as generators } from './generators/index';
-import { index as auth } from './auth/index';
-
-import { checkAuth } from './auth/app-check-auth';
+import {index as generators} from './generators/index';
+import {index as auth} from './auth/index';
+import {index as email} from './email/index';
+import {checkAuth} from './auth/app-check-auth';
 import {corsOptions} from "./corsOptions";
 //import unless = require('express-unless');
 //checkAuth.unless = unless;
@@ -39,4 +36,9 @@ app.set('port', process.env.PORT || 3000);
 //.unless({ path: ['/auth']})
 app.use('/generators', checkAuth);
 app.use('/generators', generators);
+
+app.use('/email', checkAuth);
+app.use('/email', email);
+
+
 app.use('/auth', auth);
