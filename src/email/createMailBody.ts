@@ -15,7 +15,7 @@ const populateEmailContent = (year: number, name: string, sharingLink: string): 
     .replace('{{sharingLink}}', sharingLink);
 }
 
-const createPayload = (content: string, recipient: string, file: any): object => {
+const createPayload = (content: string, year: number, name: string, recipient: string, file: any): object => {
   // const attachments = [{
   //   '@odata.type': '#microsoft.graph.fileAttachment',
   //   ContentBytes: file.toString('base64'),
@@ -23,7 +23,7 @@ const createPayload = (content: string, recipient: string, file: any): object =>
   // }];
   return {
     Message: {
-      Subject: 'Your valuation report is ready for download',
+      Subject: `${name} - ${2018} valuation report is ready for download`,
       Body: {
         ContentType: 'HTML',
         Content: content
@@ -44,6 +44,8 @@ const createPayload = (content: string, recipient: string, file: any): object =>
 const createMailBody = (year: number, name: string, recipient: string, sharingLink: string, file?: any): string => {
   return JSON.stringify(createPayload(
     populateEmailContent(year, name, sharingLink),
+    year,
+    name,
     recipient,
     file));
 }
