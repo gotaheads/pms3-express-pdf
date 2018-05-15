@@ -1,11 +1,15 @@
-//import {savePdf} from "./savePdf";
 
-const sendEmail = async (year: number, landlordNumber: number) => {
+import {generator} from "../generators/generator";
+import {saveReport} from "../onedrive/saveReport";
+
+const sendEmail = async (accessToken: string, year: number, landlordNumber: number) => {
   console.log('sendEmail year: %s, landlordNumber: %s', year, landlordNumber);
 
-  const env = process.env;
+  const path = await generator(year, landlordNumber);
+  const saved = await saveReport(accessToken, year, landlordNumber, path);
+  console.log('sendEmail saved: %j', saved);
 
-  return {};
+  return saved;
 };
 
 export { sendEmail };
