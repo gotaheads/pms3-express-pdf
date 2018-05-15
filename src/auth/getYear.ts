@@ -13,9 +13,6 @@ const getYear = (req: Request, res: Response, next: NextFunction) => {
   next();
 };
 
-const getAzureAdOpenIdConnect = passport.authenticate('azuread-openidconnect', {failureRedirect: '/'});
-
 export {
   getYear,
-  getAzureAdOpenIdConnect,
 }

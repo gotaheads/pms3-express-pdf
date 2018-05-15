@@ -1,22 +1,8 @@
-import { Request, Response } from "express";
+import {Response} from "express";
 import {getUserData} from "../graph";
-import {dashbaordUrl, getValuationYear, valuationsByLandlordUrl} from "../pms3Urls";
+import {getValuationYear, valuationsByLandlordUrl} from "../pms3Urls";
 import {getDisplayName} from "./getDisplayName";
-
-
-interface PassportUserProfile {
-  displayName: string;
-  emails: any[];
-}
-
-interface PassportUser {
-  profile: PassportUserProfile
-  accessToken: string;
-}
-
-interface PassportRequest extends Request {
-  user: PassportUser;
-}
+import {PassportRequest} from "./passports";
 
 const redirectToPms3 = (req: PassportRequest, res: Response) => {
   const year = getValuationYear(),

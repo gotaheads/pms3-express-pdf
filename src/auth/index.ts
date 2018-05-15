@@ -1,9 +1,8 @@
 import {Router} from "express";
-import {getAzureAdOpenIdConnect, getYear} from "./get-login";
-import {getAuthenticated} from "./get-authenticated";
-import {redirectToPms3} from "./redirect-to-pms3";
-import R = require('ramda');
-const { isNil, prop } = R;
+import {getAzureAdOpenIdConnect} from "./getAzureAdOpenIdConnect";
+import {getAuthenticated} from "./getAuthenticated";
+import {redirectToPms3} from "./redirectToPms3";
+import {getYear} from "./getYear";
 
 export const index = Router();
 
