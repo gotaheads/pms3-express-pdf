@@ -2,12 +2,6 @@ import * as request from "superagent";
 import {createGraphUrl} from "./getGraphUrl";
 import {DriveItem} from "@microsoft/microsoft-graph-types";
 
-
-/**
- * Generates a PUT request to upload a file.
- * @param {string} accessToken The access token to send with the request.
- * @param {Function} callback
- //  */
 const uploadFile= (accessToken: string, path: string, file: any, mimeType: string): Promise<DriveItem> => {
   // This operation only supports files up to 4MB in size.
   // To upload larger files, see `https://developer.microsoft.com/graph/docs/api-reference/v1.0/api/item_createUploadSession`.
@@ -22,12 +16,22 @@ const uploadFile= (accessToken: string, path: string, file: any, mimeType: strin
     .set('Authorization', 'Bearer ' + accessToken)
     .set('Content-Type', 'mimeType')
     .then(res => res.body);
-    // .end((err, res) => {
-    //   // Returns 200 OK and the file metadata in the body.
-    //   callback(err, res.body);
-    // });
 }
 
 export {
   uploadFile,
 }
+
+// function uploadFile(accessToken, file, callback) {
+//   // This operation only supports files up to 4MB in size.
+//   // To upload larger files, see `https://developer.microsoft.com/graph/docs/api-reference/v1.0/api/item_createUploadSession`.
+//   request
+//     .put('https://graph.microsoft.com/beta/me/drive/root/children/mypic.jpg/content')
+//     .send(file)
+//     .set('Authorization', 'Bearer ' + accessToken)
+//     .set('Content-Type', 'image/jpg')
+//     .end((err, res) => {
+//       // Returns 200 OK and the file metadata in the body.
+//       callback(err, res.body);
+//     });
+// }

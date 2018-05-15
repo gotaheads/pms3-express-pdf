@@ -10,11 +10,7 @@ const getSharingLink= (accessToken: string, id: string): Promise<string> => {
     .send({ type: 'view' })
     .set('Authorization', 'Bearer ' + accessToken)
     .set('Content-Type', 'application/json')
-    .then(res => res.body.link);
-  // .end((err, res) => {
-  //   // Returns 200 OK and the file metadata in the body.
-  //   callback(err, res.body);
-  // });
+    .then(res => res.body.link.webUrl);
 }
 
 export {
