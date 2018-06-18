@@ -10,7 +10,8 @@ const sendMail= (accessToken: string, message: string): Promise<string> => {
     .set('Authorization', 'Bearer ' + accessToken)
     .set('Content-Type', 'application/json')
     .set('Content-Length', message.length.toString())
-    .then(res => res.body);
+    .then(res => res.body)
+    .catch(err => console.error('sendMail error: %s, %j', err));
 }
 
 export {

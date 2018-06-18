@@ -40,5 +40,4 @@ app.use('/generators', generators);
 app.use('/email', checkAuth);
 app.use('/email', email);
 
-
 app.use('/auth', auth);
