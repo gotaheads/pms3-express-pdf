@@ -1,3 +1,5 @@
+import {NextFunction, Response, Request} from "express";
+
 require('dotenv').config();
 
 import * as express from 'express';
@@ -37,7 +39,20 @@ app.set('port', process.env.PORT || 3000);
 app.use('/generators', checkAuth);
 app.use('/generators', generators);
 
+//https://stackoverflow.com/questions/5710358/how-to-retrieve-post-query-parameters
+app.use(express.json());       // to support JSON-encoded bodies
+//app.use(express.urlencoded()); // to support URL-encoded bodies
 app.use('/email', checkAuth);
 app.use('/email', email);
 
 app.use('/auth', auth);
+
+const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
+  if (res.headersSent) {
+    return next(err)
+  }
+  res.status(500)
+  res.render('Error', { error: err })
+}
+
+app.use(errorHandler)
