@@ -52,7 +52,7 @@ const errorHandler = (err: Error, req: Request, res: Response, next: NextFunctio
     return next(err)
   }
   res.status(500)
-  res.render('Error', { error: err })
+  res.json({ error: err })
 }
 
 app.use(errorHandler)
