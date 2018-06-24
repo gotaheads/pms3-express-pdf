@@ -17,7 +17,7 @@
 		"serve-debug": "nodemon --inspect dist/server.js",
 		"watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\"",
 		"install-global": "npm install pm2 -g",
-		"pm2-monit":"pm2 monit"
+		"pm2-monit": "pm2 monit"
 	},
 	"author": "",
 	"license": "ISC",
@@ -40,7 +40,7 @@
 		"npm": "^5.8.0",
 		"passport": "^0.4.0",
 		"passport-azure-ad": "^3.0.12",
-		"puppeteer": "^1.2.0",
+		"puppeteer": "^1.5.0",
 		"ramda": "^0.25.0",
 		"superagent": "^3.8.2",
 		"uuid": "^3.2.1"
