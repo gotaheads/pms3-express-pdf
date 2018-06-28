@@ -1,6 +1,9 @@
 import * as request from "superagent";
 import {createGraphUrl} from "./getGraphUrl";
 import {DriveItem} from "@microsoft/microsoft-graph-types";
+import R = require('ramda');
+import {listChildren} from "./listChildren";
+const { prop, path } = R;
 
 const uploadFile= (accessToken: string, path: string, file: any, mimeType: string): Promise<DriveItem> => {
   // This operation only supports files up to 4MB in size.
@@ -10,12 +13,23 @@ const uploadFile= (accessToken: string, path: string, file: any, mimeType: strin
 
   const url = createGraphUrl(`drive/root/${path}/content`);
   console.log('uploadFile path: %s, url: %s, file: %s, mimeType: %s', path, url, typeof file, mimeType)
+
   return request
     .put(url)
     .send(file)
     .set('Authorization', 'Bearer ' + accessToken)
     .set('Content-Type', 'mimeType')
-    .then(res => res.body);
+    .then(res => res.body)
+    .catch(err => {
+      const status = prop('status',err);
+      console.error('errorHandler status: %s', status);
+
+      switch (status) {
+        case 401:
+
+      }
+
+    });
 }
 
 export {

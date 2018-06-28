@@ -12,8 +12,13 @@ import {passport} from './auth/passport';
 import {index as generators} from './generators/index';
 import {index as auth} from './auth/index';
 import {index as email} from './email/index';
+import {index as graph} from './graph/index';
 import {checkAuth} from './auth/app-check-auth';
 import {corsOptions} from "./corsOptions";
+
+import R = require('ramda');
+const { prop, path } = R;
+
 //import unless = require('express-unless');
 //checkAuth.unless = unless;
 
@@ -47,11 +52,17 @@ app.use('/email', email);
 
 app.use('/auth', auth);
 
+app.use('/graph', graph);
+
 const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
   if (res.headersSent) {
     return next(err)
   }
-  res.status(500)
+
+  console.error('errorHandler originalUrl: %s, status: %s, text: %j, %j',
+    prop('originalUrl', req), prop('status',err), path(['data', 'text'], err));
+  const statusCode = prop('status',err);
+  res.status(!!statusCode ? statusCode : 500)
   res.json({ error: err })
 }
 

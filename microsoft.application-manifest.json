@@ -1,0 +1,130 @@
+{
+  "id": "aedf328c-ad1d-477a-b831-72b0fa7f492f",
+  "addIns": [],
+  "allowPublicClient": null,
+  "appId": "7f21a44c-e367-41ab-b6be-8f3bb1c59e6a",
+  "appCategory": null,
+  "appData": null,
+  "appMetadata": null,
+  "oauth2AllowUrlPathMatching": false,
+  "createdDateTime": "2018-02-11T10:11:59Z",
+  "identifierUris": [],
+  "informationalUrls": {
+    "termsOfService": null,
+    "privacy": null
+  },
+  "isDeviceOnlyAuthSupported": null,
+  "keyCredentials": [],
+  "knownClientApplications": [],
+  "logoUrl": null,
+  "logoutUrl": "https://pms.nakanoya.com.au/logout",
+  "name": "pms4",
+  "oauth2AllowIdTokenImplicitFlow": false,
+  "oauth2AllowImplicitFlow": false,
+  "oauth2Permissions": [],
+  "oauth2RequirePostResponse": false,
+  "orgRestrictions": [],
+  "parentalControlSettings": {
+    "countriesBlockedForMinors": [],
+    "legalAgeGroupRule": "Allow"
+  },
+  "passwordCredentials": [
+    {
+      "customKeyIdentifier": null,
+      "endDate": "2099-12-31T12:00:00Z",
+      "keyId": "cd2f803d-1709-4c98-9ffb-2b531c2a136e",
+      "startDate": "2018-02-11T10:12:28.2243161Z",
+      "value": null,
+      "createdOn": "2018-02-11T10:12:31.4566896Z",
+      "hint": "bbA"
+    }
+  ],
+  "preAuthorizedApplications": [],
+  "publisherDomain": "portfolioms.com.au",
+  "replyUrls": [
+    "https://pms.nakanoya.com.au/authorize",
+    "https://pms.nakanoya.com.au/token",
+    "https://pms.nakanoya.com.au/auth/token",
+    "http://localhost:3000/authorize",
+    "http://localhost:3000/token",
+    "http://localhost:3100/auth/token"
+  ],
+  "replyUrlsWithType": [],
+  "requiredResourceAccess": [
+    {
+      "resourceAppId": "00000003-0000-0000-c000-000000000000",
+      "resourceAccess": [
+        {
+          "id": "ff74d97f-43af-4b68-9f2a-b77ee6968c5d",
+          "type": "Scope"
+        },
+        {
+          "id": "242b9d9e-ed24-4d09-9a52-f43769beb9d4",
+          "type": "Scope"
+        },
+        {
+          "id": "d56682ec-c09e-4743-aaf4-1a3aac4caa21",
+          "type": "Scope"
+        },
+        {
+          "id": "afb6c84b-06be-49af-80bb-8f3f77004eab",
+          "type": "Scope"
+        },
+        {
+          "id": "10465720-29dd-4523-a11a-6a75c743c9d9",
+          "type": "Scope"
+        },
+        {
+          "id": "5c28f0bf-8a70-41f1-8ab2-9032436ddb65",
+          "type": "Scope"
+        },
+        {
+          "id": "863451e7-0667-486c-a5d6-d135439485f0",
+          "type": "Scope"
+        },
+        {
+          "id": "8019c312-3263-48e6-825e-2b833497195b",
+          "type": "Scope"
+        },
+        {
+          "id": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca",
+          "type": "Scope"
+        },
+        {
+          "id": "7b9103a5-4610-446b-9670-80643382c1fa",
+          "type": "Scope"
+        },
+        {
+          "id": "024d486e-b451-40bb-833d-3e66d98c5c73",
+          "type": "Scope"
+        },
+        {
+          "id": "5df07973-7d5d-46ed-9847-1271055cbd51",
+          "type": "Scope"
+        },
+        {
+          "id": "e383f46e-2787-4529-855e-0e479a3ffac0",
+          "type": "Scope"
+        },
+        {
+          "id": "a367ab51-6b49-43bf-a716-a1fb06d2a174",
+          "type": "Scope"
+        },
+        {
+          "id": "e1fe6dd8-ba31-4d61-89e7-88639da4683d",
+          "type": "Scope"
+        }
+      ]
+    }
+  ],
+  "samlMetadataUrl": null,
+  "signInUrl": null,
+  "signInAudience": null,
+  "tags": [
+    "appModelVersion:2",
+    "accessTokenVersion:1",
+    "availableToOtherTenants:true",
+    "supportsConvergence:true"
+  ],
+  "tokenEncryptionKeyId": null
+}

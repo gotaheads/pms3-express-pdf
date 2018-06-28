@@ -1,5 +1,9 @@
-import { getUserData } from './getUserData';
-import { uploadFile } from './uploadFile';
+import {getUserData} from './getUserData';
+import {Router} from "express";
+import {get} from "./get";
+
+export const index = Router();
+index.get("/", get);
 
 export {
   getUserData,
