@@ -1,9 +1,11 @@
 import * as request from "superagent";
 import {createGraphUrl} from "./getGraphUrl";
+import R = require('ramda');
+const { prop, path } = R;
 
 const sendMail= (accessToken: string, message: string): Promise<string> => {
   const url = createGraphUrl(`sendMail`);
-  console.log('sendMail message: %s', message);
+  //console.log('sendMail message: %s', message);
   return request
     .post(url)
     .send(message)
@@ -11,7 +13,18 @@ const sendMail= (accessToken: string, message: string): Promise<string> => {
     .set('Content-Type', 'application/json')
     .set('Content-Length', message.length.toString())
     .then(res => res.body)
-    .catch(err => console.error('sendMail error: %s, %j', err));
+    .catch(err => {
+      const status = prop('status',err);
+      console.error('sendMail status: %s, err: %j', status, err);
+
+      switch (status) {
+        case 401:
+          return Promise.reject({err});
+        default:
+          return Promise.reject({err});
+      }
+
+    });
 }
 
 export {

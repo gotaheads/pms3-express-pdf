@@ -15,7 +15,7 @@ const sendEmailWithContentAndLinks =
   const path = await generator(year, landlordNumber);
   const saved = await saveReport(accessToken, year, landlordNumber, path);
   const shareLink = await getSharingLink(accessToken, saved.id);
-  const mailAsString = createMailBodyWithHtmlContent(year, name, email, shareLink, overviewLink, emailContents);
+  const mailAsString = createMailBodyWithContent(year, name, email, shareLink, overviewLink, emailContents);
   const sent = await sendMail(accessToken, mailAsString);
   console.log('sendEmail saved.id: %s, shareLink: %s', saved.id, shareLink);
 

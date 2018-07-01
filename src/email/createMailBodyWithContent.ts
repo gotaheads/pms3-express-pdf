@@ -1,15 +1,8 @@
 
 // The contents of the outbound email message that will be sent to the user
 import {unescape} from "querystring";
+import {emailTemplate} from "./emailTemplate";
 
-const emailContent = `
-<html><head> <meta http-equiv='Content-Type' content='text/html; charset=us-ascii'> <title></title> </head>
-<body style='font-family:calibri'>
- <p>Dear {{name}},</p>
- <p>{{htmlContent}}</p>
- <a href='{{sharingLink}}'>Click here to view your valuation report.</a><br>
- <a href='{{overviewLink}}'>Click here to view PMS market overview.</a>
-</body> </html>`;
 
 const populateEmailContent = (year: number, name: string, sharingLink: string,
                               overviewLink: string, content: string,
@@ -17,7 +10,7 @@ const populateEmailContent = (year: number, name: string, sharingLink: string,
   //const htmlContent = content.split('\r\n').map(p => `<p>${p}</p>`).join('');
   const htmlContent = content.replace(/(?:\r\n|\r|\n)/g, '<br>');
   //const htmlContent = content;
-  return emailContent
+  return emailTemplate
     .replace('{{year}}', `${year}`)
     .replace('{{name}}', name)
     .replace('{{htmlContent}}', htmlContent)

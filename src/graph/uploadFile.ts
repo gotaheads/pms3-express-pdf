@@ -2,7 +2,6 @@ import * as request from "superagent";
 import {createGraphUrl} from "./getGraphUrl";
 import {DriveItem} from "@microsoft/microsoft-graph-types";
 import R = require('ramda');
-import {listChildren} from "./listChildren";
 const { prop, path } = R;
 
 const uploadFile= (accessToken: string, path: string, file: any, mimeType: string): Promise<DriveItem> => {
@@ -22,10 +21,11 @@ const uploadFile= (accessToken: string, path: string, file: any, mimeType: strin
     .then(res => res.body)
     .catch(err => {
       const status = prop('status',err);
-      console.error('errorHandler status: %s', status);
-
+      console.error('uploadFile status: %s', status);
       switch (status) {
         case 401:
+          return Promise.reject({err});
+        default:
           return Promise.reject({err});
       }
 
