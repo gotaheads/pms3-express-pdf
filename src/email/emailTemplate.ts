@@ -258,7 +258,9 @@ text-align: center;">
 
                         <h3 class="null"
                             style="text-align: left;display: block;margin: 0;padding: 0;color: #202020;font-size: 16px;font-style: normal;font-weight: normal;line-height: 150%;letter-spacing: normal;">
-                            Dear {{name}}, 
+                            <br><br>
+                            Dear {{name}},
+                            <br><br> 
                             {{htmlContent}}
                         </h3>
 
