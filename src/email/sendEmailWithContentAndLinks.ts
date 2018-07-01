@@ -12,12 +12,11 @@ const sendEmailWithContentAndLinks =
          overviewLink: string, emailContents: string) => {
   console.log('sendEmail year: %s, landlordNumber: %s', year, landlordNumber);
 
-  //const path = await generator(year, landlordNumber);
-  //const saved = await saveReport(accessToken, year, landlordNumber, path);
-  //const shareLink = await getSharingLink(accessToken, saved.id);
-
-  const saved = {id:-1};
-  const shareLink = '';
+  const path = await generator(year, landlordNumber);
+  const saved = await saveReport(accessToken, year, landlordNumber, path);
+  const shareLink = await getSharingLink(accessToken, saved.id);
+  // const saved = {id:-1};
+  // const shareLink = '';
 
   const mailAsString = createMailBodyWithContent(year, name, email, shareLink, overviewLink, emailContents);
   const sent = await sendMail(accessToken, mailAsString);

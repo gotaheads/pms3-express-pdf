@@ -3,7 +3,6 @@
 import {unescape} from "querystring";
 import {emailTemplate} from "./emailTemplate";
 
-
 const populateEmailContent = (year: number, name: string, sharingLink: string,
                               overviewLink: string, content: string,
                               ): string => {

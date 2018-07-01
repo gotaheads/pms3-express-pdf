@@ -16,188 +16,188 @@ export const emailTemplate = `
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>*|MC:SUBJECT|*</title>
-<style type="text/css">
-p {
-margin: 10px 0;
-padding: 0;
-}
-table {
-border-collapse: collapse;
-}
-h3, h4 {
-display: block;
-margin: 0;
-padding: 0;
-}
-img, a img {
-border: 0;
-height: auto;
-outline: none;
-text-decoration: none;
-}
-body, #bodyTable, #bodyCell {
-height: 100%;
-margin: 0;
-padding: 0;
-width: 100%;
-}
-.mcnPreviewText {
-display: none !important;
-}
-#outlook a {
-padding: 0;
-}
-img {
--ms-interpolation-mode: bicubic;
-}
-table {
-mso-table-lspace: 0pt;
-mso-table-rspace: 0pt;
-}
-p, a, li, td, blockquote {
-mso-line-height-rule: exactly;
-}
-a[href^=tel], a[href^=sms] {
-color: inherit;
-cursor: default;
-text-decoration: none;
-}
-p, a, li, td, body, table, blockquote {
--ms-text-size-adjust: 100%;
--webkit-text-size-adjust: 100%;
-}
-a[x-apple-data-detectors] {
-color: inherit !important;
-text-decoration: none !important;
-font-size: inherit !important;
-font-family: inherit !important;
-font-weight: inherit !important;
-line-height: inherit !important;
-}
-#bodyCell {
-padding: 10px;
-}
-.templateContainer {
-max-width: 600px !important;
-}
-a.mcnButton {
-display: block;
-}
-.mcnImage, .mcnRetinaImage {
-vertical-align: bottom;
-}
-.mcnTextContent {
-word-break: break-word;
-}
-.mcnTextContent img {
-height: auto !important;
-}
-body, #bodyTable {
-background-color: #ffffff;
-}
-#bodyCell {
-border-top: 0;
-}
-.templateContainer {
-border: 0;
-}
-h3 {
-color: #202020;
-font-size: 16px;
-font-style: normal;
-font-weight: normal;
-line-height: 150%;
-letter-spacing: normal;
-text-align: center;
-}
-h4 {
-color: #202020;
-font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-font-size: 30px;
-font-style: normal;
-font-weight: normal;
-line-height: 125%;
-letter-spacing: normal;
-text-align: center;
-}
-@media only screen and (min-width: 768px) {
-.templateContainer {
-    width: 600px !important;
-}
-}
-@media only screen and (max-width: 480px) {
-body, table, td, p, a, li, blockquote {
-    -webkit-text-size-adjust: none !important;
-}
-}
-@media only screen and (max-width: 480px) {
-body {
-    width: 100% !important;
-    min-width: 100% !important;
-}
-}
-@media only screen and (max-width: 480px) {
-#bodyCell {
-    padding-top: 10px !important;
-}
-}
-@media only screen and (max-width: 480px) {
-.mcnRetinaImage {
-    max-width: 100% !important;
-}
-}
-@media only screen and (max-width: 480px) {
-.mcnImage {
-    width: 100% !important;
-}
-}
-@media only screen and (max-width: 480px) {
-.mcnTextContentContainer, .mcnBoxedTextContentContainer, .mcnImageGroupContentContainer, .mcnCaptionLeftTextContentContainer, .mcnCaptionRightTextContentContainer, .mcnCaptionLeftImageContentContainer, .mcnCaptionRightImageContentContainer, .mcnImageCardLeftTextContentContainer, .mcnImageCardRightTextContentContainer, .mcnImageCardLeftImageContentContainer, .mcnImageCardRightImageContentContainer {
-    max-width: 100% !important;
-    width: 100% !important;
-}
-}
-@media only screen and (max-width: 480px) {
-.mcnBoxedTextContentContainer {
-    min-width: 100% !important;
-}
-}
-@media only screen and (max-width: 480px) {
-.mcnCaptionLeftContentOuter .mcnTextContent, .mcnCaptionRightContentOuter .mcnTextContent {
-    padding-top: 9px !important;
-}
-}
-@media only screen and (max-width: 480px) {
-.mcnImageCardTopImageContent, .mcnCaptionBottomContent:last-child .mcnCaptionBottomImageContent, .mcnCaptionBlockInner .mcnCaptionTopContent:last-child .mcnTextContent {
-    padding-top: 18px !important;
-}
-}
-@media only screen and (max-width: 480px) {
-.mcnTextContent {
-    padding-right: 18px !important;
-    padding-left: 18px !important;
-}
-}
-@media only screen and (max-width: 480px) {
-h3 {
-    font-size: 18px !important;
-    line-height: 125% !important;
-}
-}
-@media only screen and (max-width: 480px) {
-h4 {
-    font-size: 16px !important;
-    line-height: 150% !important;
-}
-}
-@media only screen and (max-width: 480px) {
-.mcnBoxedTextContentContainer .mcnTextContent, .mcnBoxedTextContentContainer .mcnTextContent p {
-    font-size: 14px !important;
-    line-height: 150% !important;
-}
-}
+    <style type="text/css">
+        p {
+            margin: 10px 0;
+            padding: 0;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        h3, h4 {
+            display: block;
+            margin: 0;
+            padding: 0;
+        }
+        img, a img {
+            border: 0;
+            height: auto;
+            outline: none;
+            text-decoration: none;
+        }
+        body, #bodyTable, #bodyCell {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        .mcnPreviewText {
+            display: none !important;
+        }
+        #outlook a {
+            padding: 0;
+        }
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
+        table {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        p, a, li, td, blockquote {
+            mso-line-height-rule: exactly;
+        }
+        a[href^=tel], a[href^=sms] {
+            color: inherit;
+            cursor: default;
+            text-decoration: none;
+        }
+        p, a, li, td, body, table, blockquote {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+        #bodyCell {
+            padding: 10px;
+        }
+        .templateContainer {
+            max-width: 600px !important;
+        }
+        a.mcnButton {
+            display: block;
+        }
+        .mcnImage, .mcnRetinaImage {
+            vertical-align: bottom;
+        }
+        .mcnTextContent {
+            word-break: break-word;
+        }
+        .mcnTextContent img {
+            height: auto !important;
+        }
+        body, #bodyTable {
+            background-color: #ffffff;
+        }
+        #bodyCell {
+            border-top: 0;
+        }
+        .templateContainer {
+            border: 0;
+        }
+        h3 {
+            color: #202020;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 150%;
+            letter-spacing: normal;
+            text-align: center;
+        }
+        h4 {
+            color: #202020;
+            font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 125%;
+            letter-spacing: normal;
+            text-align: center;
+        }
+        @media only screen and (min-width: 768px) {
+            .templateContainer {
+                width: 600px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            body, table, td, p, a, li, blockquote {
+                -webkit-text-size-adjust: none !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            body {
+                width: 100% !important;
+                min-width: 100% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            #bodyCell {
+                padding-top: 10px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .mcnRetinaImage {
+                max-width: 100% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .mcnImage {
+                width: 100% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .mcnTextContentContainer, .mcnBoxedTextContentContainer, .mcnImageGroupContentContainer, .mcnCaptionLeftTextContentContainer, .mcnCaptionRightTextContentContainer, .mcnCaptionLeftImageContentContainer, .mcnCaptionRightImageContentContainer, .mcnImageCardLeftTextContentContainer, .mcnImageCardRightTextContentContainer, .mcnImageCardLeftImageContentContainer, .mcnImageCardRightImageContentContainer {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .mcnBoxedTextContentContainer {
+                min-width: 100% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .mcnCaptionLeftContentOuter .mcnTextContent, .mcnCaptionRightContentOuter .mcnTextContent {
+                padding-top: 9px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .mcnImageCardTopImageContent, .mcnCaptionBottomContent:last-child .mcnCaptionBottomImageContent, .mcnCaptionBlockInner .mcnCaptionTopContent:last-child .mcnTextContent {
+                padding-top: 18px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .mcnTextContent {
+                padding-right: 18px !important;
+                padding-left: 18px !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            h3 {
+                font-size: 18px !important;
+                line-height: 125% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            h4 {
+                font-size: 16px !important;
+                line-height: 150% !important;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .mcnBoxedTextContentContainer .mcnTextContent, .mcnBoxedTextContentContainer .mcnTextContent p {
+                font-size: 14px !important;
+                line-height: 150% !important;
+            }
+        }
 
-</style><!--[if !mso]><!-->
+    </style><!--[if !mso]><!-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet"><!--<![endif]-->
 </head>
 <body style="height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;
@@ -258,50 +258,43 @@ text-align: center;">
 
                         <h3 class="null"
                             style="text-align: left;display: block;margin: 0;padding: 0;color: #202020;font-size: 16px;font-style: normal;font-weight: normal;line-height: 150%;letter-spacing: normal;">
-                            Dear Jock,
-                            <br>
-                            Your market overview and property value estimates for the
-                            financial year ending 30&nbsp;June, 2018 are available for
-                            viewing.<br>
-                            <br>
-                            Please access the overview and appraisal via the links
-                            below.<br>
-                            <br>
-                            Should you wish to discuss your property portfolio further
-                            please either&nbsp;reply to this email or call our office.
+                            Dear {{name}}, 
+                            {{htmlContent}}
                         </h3>
 
                         <p style="text-align: left;">
                             <br>
                             <span style="font-size:14px"><a
-                                    href="https://portfolioms-my.sharepoint.com/:b:/g/personal/valuations_portfolioms_com_au/EXZA0TuEmAZJgLC-kCLJjGsBQbnfaWzCXcXwZ7na0jaTDQ"
+                                    href="{{sharingLink}}"
                                     style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #06a146;font-weight: normal;text-decoration: none;">Click here to view your valuation report</a><br>
                                                     <br>
-                                                    <a href="https://portfolioms-my.sharepoint.com/:b:/g/personal/valuations_portfolioms_com_au/EectJUKYt9tGs3kXhoXgPUUB_uGxo9wFqkHSHQhcHbMPdA?e=dgTE4C"
+                                                    <a href="{{overviewLink}}"
                                                        style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #06a146;font-weight: normal;text-decoration: none;">Click here to view your Portfolio Management Services market overview</a></span>
-                            <p style="margin: 10px 0;color: #727272;font-size: 13px;text-align: left;">
-                                <em>We estimate the value of your property&nbsp;by carefully
-                                    assessing&nbsp;the market,&nbsp; yield, location and&nbsp;asset
-                                    maturity overlaid with demographics,&nbsp;infrastructure and
-                                    current economic tide.&nbsp;<br>
-                                    <br>
-                                    The comparative suburb medians are&nbsp;sought from the REIV
-                                    March Quarter median price data, and CoreLogic.</em></p>
+                        <p style="margin: 30px 0;color: #727272;font-size: 13px;text-align: left;">
+                            <em>We estimate the value of your property&nbsp;by carefully
+                                assessing&nbsp;the market,&nbsp; yield, location and&nbsp;asset
+                                maturity overlaid with demographics,&nbsp;infrastructure and
+                                current economic tide.&nbsp;<br>
+                                <br>
+                                The comparative suburb medians are&nbsp;sought from the REIV
+                                March Quarter median price data, and CoreLogic.</em></p>
 
-                            <h4 class="null"
-                                style="display: block;margin: 0;padding: 0;color: #202020;font-size: 30px;">
-                                OUR <strong>APPROACH</strong></h4>
+                        <hr style="color: #727272; margin: 15px 0 25px 0;">
 
-                            <img align="center" alt=""
-                                 src="https://gallery.mailchimp.com/af9680e06765bfe07890311e5/images/9287abca-6dc4-468e-a503-71d826f9b935.png"
-                                 width="600"
-                                 style="max-width: 1200px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"
-                                 class="mcnRetinaImage">
+                        <h4 class="null"
+                            style="display: block;margin: 0;padding: 0;color: #202020;font-size: 30px;">
+                            OUR <strong>APPROACH</strong></h4>
 
-                            <p style="text-align: center;color: #727272;font-size: 13px;line-height: 150%;">
-                                <strong>For a confidential discussion on our approach and<br>
-                                    how it's helped our clients since the early 1970's,<br>
-                                    call us on 03 9621 1044.</strong></p>
+                        <img align="center" alt=""
+                             src="https://gallery.mailchimp.com/af9680e06765bfe07890311e5/images/9287abca-6dc4-468e-a503-71d826f9b935.png"
+                             width="600"
+                             style="max-width: 1200px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"
+                             class="mcnRetinaImage">
+
+                        <p style="text-align: center;color: #727272;font-size: 13px;line-height: 150%;">
+                            <strong>For a confidential discussion on our approach and<br>
+                                how it's helped our clients since the early 1970's,<br>
+                                call us on 03 9621 1044.</strong></p>
                         </p>
                     </td>
                 </tr>
