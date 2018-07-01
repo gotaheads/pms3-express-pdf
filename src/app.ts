@@ -58,10 +58,24 @@ const errorHandler = (err: Error, req: Request, res: Response, next: NextFunctio
   if (res.headersSent) {
     return next(err)
   }
+  const statusCode = +prop('status',err);
+  console.error('errorHandler originalUrl: %s, status: %s, req.logOut: %s, req.session.destroy: %s',
+    prop('originalUrl', req), statusCode,  req.logOut, req.session.destroy);
 
-  console.error('errorHandler originalUrl: %s, status: %s, text: %j, %j',
-    prop('originalUrl', req), prop('status',err), path(['data', 'text'], err));
-  const statusCode = prop('status',err);
+  switch (statusCode) {
+    case 401:
+      console.log(' req.logOut instanceof Function: %s', req.logOut instanceof Function);
+      if(!!req.logOut) {
+        req.logOut();
+      }
+      console.log(' req.session.destroy instanceof Function: %s', req.session.destroy instanceof Function);
+      if(!!req.session.destroy) {
+        req.session.destroy((_ => console.log('destroed the current session.')));
+      }
+    default:
+
+  }
+
   res.status(!!statusCode ? statusCode : 500)
   res.json({ error: err })
 }

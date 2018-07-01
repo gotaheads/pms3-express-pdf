@@ -26,7 +26,7 @@ const uploadFile= (accessToken: string, path: string, file: any, mimeType: strin
 
       switch (status) {
         case 401:
-
+          return Promise.reject({err});
       }
 
     });
