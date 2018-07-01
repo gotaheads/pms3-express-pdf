@@ -271,7 +271,7 @@ text-align: center;">
                             please either&nbsp;reply to this email or call our office.
                         </h3>
 
-                        <div style="text-align: left;">
+                        <p style="text-align: left;">
                             <br>
                             <span style="font-size:14px"><a
                                     href="https://portfolioms-my.sharepoint.com/:b:/g/personal/valuations_portfolioms_com_au/EXZA0TuEmAZJgLC-kCLJjGsBQbnfaWzCXcXwZ7na0jaTDQ"
@@ -300,9 +300,9 @@ text-align: center;">
 
                             <p style="text-align: center;color: #727272;font-size: 13px;line-height: 150%;">
                                 <strong>For a confidential discussion on our approach and<br>
-                                    how it’s helped our clients since the early 1970’s,<br>
+                                    how it's helped our clients since the early 1970's,<br>
                                     call us on 03 9621 1044.</strong></p>
-                        </div>
+                        </p>
                     </td>
                 </tr>
                 <tr>
