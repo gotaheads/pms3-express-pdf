@@ -1,6 +1,4 @@
-
 // The contents of the outbound email message that will be sent to the user
-import {unescape} from "querystring";
 import {emailTemplate} from "./emailTemplate";
 
 const populateEmailContent = (year: number, name: string, sharingLink: string,
@@ -8,6 +6,7 @@ const populateEmailContent = (year: number, name: string, sharingLink: string,
                               ): string => {
   //const htmlContent = content.split('\r\n').map(p => `<p>${p}</p>`).join('');
   const htmlContent = content.replace(/(?:\r\n|\r|\n)/g, '<br>');
+
   //const htmlContent = content;
   return emailTemplate
     .replace('{{year}}', `${year}`)
@@ -16,6 +15,7 @@ const populateEmailContent = (year: number, name: string, sharingLink: string,
     .replace('{{sharingLink}}', sharingLink)
     .replace('{{overviewLink}}', overviewLink);
 }
+
 //https://stackoverflow.com/questions/2670037/how-to-remove-invalid-utf-8-characters-from-a-javascript-string
 //unescape(encodeURIComponent(content))
 const createPayload = (content: string, year: number, name: string, recipient: string, file: any): object => {

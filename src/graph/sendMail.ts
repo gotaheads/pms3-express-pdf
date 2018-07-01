@@ -5,7 +5,7 @@ const { prop, path } = R;
 
 const sendMail= (accessToken: string, message: string): Promise<string> => {
   const url = createGraphUrl(`sendMail`);
-  //console.log('sendMail message: %s', message);
+  console.log('sendMail');
   return request
     .post(url)
     .send(message)

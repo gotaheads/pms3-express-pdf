@@ -59,8 +59,10 @@ const errorHandler = (err: Error, req: Request, res: Response, next: NextFunctio
     return next(err)
   }
   const statusCode = +prop('status',err);
-  console.error('errorHandler originalUrl: %s, status: %s, req.logOut: %s, req.session.destroy: %s',
-    prop('originalUrl', req), statusCode,  req.logOut, req.session.destroy);
+  // console.error('errorHandler originalUrl: %s, status: %s, req.logOut: %s, req.session.destroy: %s',
+  //   prop('originalUrl', req), statusCode,  req.logOut, req.session.destroy);
+  console.error('errorHandler originalUrl: %s, status: %s, err: %j',
+    prop('originalUrl', req), statusCode,  err);
 
   switch (statusCode) {
     case 401:
