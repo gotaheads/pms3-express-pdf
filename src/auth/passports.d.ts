@@ -8,6 +8,7 @@ interface PassportUserProfile {
 interface PassportUser {
   profile: PassportUserProfile
   accessToken: string;
+  refreshToken: string;
 }
 
 interface PassportRequest extends Request {

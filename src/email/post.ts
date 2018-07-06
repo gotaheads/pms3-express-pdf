@@ -1,9 +1,10 @@
 import {Response} from "express";
 import * as asyncHandler from 'express-async-handler';
-import {getAccessToken, isAuthenticated} from "../auth/getAuthenticated";
+import {getAccessToken, getRefreshToken, isAuthenticated} from "../auth/getAuthenticated";
 import {PassportRequest} from "../auth/passports";
 import R = require('ramda');
 import {sendEmailWithContentAndLinks} from "./sendEmailWithContentAndLinks";
+import {refreshToken} from "../auth/refreshToken";
 
 const { isNil, prop, path } = R;
 //'valuations@portfolioms.com.au'
@@ -24,6 +25,8 @@ const post = asyncHandler(async (req: PassportRequest, res: Response) => {
   //                  Due to client feedback, we are delivering these to you via emails. Should you prefer a hard copy of your appraisal, we will be happy to send it out in the same manner as previous years.
   //
   //                  Over the coming months we will be in touch to discuss your property assets further, however please feel free to request a call sooner.`;
+
+  const newToken = await refreshToken(getRefreshToken(req), req);
 
   const sent = await sendEmailWithContentAndLinks(getAccessToken(req), year, landlordNumber, email, name,
     overviewLink, content);

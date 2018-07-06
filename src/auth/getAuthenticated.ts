@@ -11,9 +11,10 @@ const getAuthenticated = (req: PassportRequest, res: Response) => {
 
 const isAuthenticated = (req: PassportRequest): boolean => !isNil(prop('user', req));
 const getAccessToken = (req: PassportRequest): string => path(['user', 'accessToken'], req);//req.user.accessToken
-
+const getRefreshToken = (req: PassportRequest): string => path(['user', 'refreshToken'], req);//req.user.accessToken
 export {
   isAuthenticated,
   getAuthenticated,
   getAccessToken,
+  getRefreshToken,
 }

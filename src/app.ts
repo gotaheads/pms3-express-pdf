@@ -66,14 +66,26 @@ const errorHandler = (err: Error, req: Request, res: Response, next: NextFunctio
 
   switch (statusCode) {
     case 401:
-      console.log(' req.logOut instanceof Function: %s', req.logOut instanceof Function);
-      if(!!req.logOut) {
-        req.logOut();
-      }
-      console.log(' req.session.destroy instanceof Function: %s', req.session.destroy instanceof Function);
-      if(!!req.session.destroy) {
-        req.session.destroy((_ => console.log('destroed the current session.')));
-      }
+
+      var refresh = require('passport-oauth2-refresh');
+      refresh.requestNewAccessToken('azure', 'some_refresh_token', (err:any, accessToken: string, refreshToken: string) => {
+        // You have a new access token, store it in the user object,
+        // or use it to make a new request.
+        // `refreshToken` may or may not exist, depending on the strategy you are using.
+        // You probably don't need it anyway, as according to the OAuth 2.0 spec,
+        // it should be the same as the initial refresh token.
+        console.log('errorHandler refreshToken: %s', refreshToken);
+        req.user.accessToken = refreshToken;
+      });
+
+      // console.log(' req.logOut instanceof Function: %s', req.logOut instanceof Function);
+      // if(!!req.logOut) {
+      //   req.logOut();
+      // }
+      // console.log(' req.session.destroy instanceof Function: %s', req.session.destroy instanceof Function);
+      // if(!!req.session.destroy) {
+      //   req.session.destroy((_ => console.log('destroed the current session.')));
+      // }
     default:
 
   }

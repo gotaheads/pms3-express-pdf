@@ -5,6 +5,8 @@ import { creds } from './creds';
 import * as uuid from 'uuid';
 import {getDisplayName} from "./getDisplayName";
 
+//import refresh = require('passport-oauth2-refresh');
+
 // **IMPORTANT
 // Note that production apps will need to create a self-signed cert and use a secure server,
 // and change dev settings marked 'For development only' in app.js and config.js.
@@ -25,7 +27,9 @@ const callback = (iss: any, sub: any, profile: any, accessToken: string, refresh
   });
 };
 
-passport.use(new OIDCStrategy(creds, callback));
+const strategy = new OIDCStrategy(creds, callback);
+passport.use(strategy);
+
 
 const users: any = {};
 passport.serializeUser((user, done) => {

@@ -1,4 +1,4 @@
-const minify:any = require('html-minifier').minify;
+const minify: any = require('html-minifier').minify;
 export const emailTemplate = minify(`
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
@@ -22,51 +22,63 @@ export const emailTemplate = minify(`
             margin: 10px 0;
             padding: 0;
         }
+
         table {
             border-collapse: collapse;
         }
+
         h3, h4 {
             display: block;
             margin: 0;
             padding: 0;
         }
+
         img, a img {
             border: 0;
             height: auto;
             outline: none;
             text-decoration: none;
         }
+
         body, #bodyTable, #bodyCell {
             height: 100%;
             margin: 0;
             padding: 0;
             width: 100%;
         }
+
         .mcnPreviewText {
             display: none !important;
         }
+
         #outlook a {
             padding: 0;
         }
+
         img {
             -ms-interpolation-mode: bicubic;
         }
+
         table {
             mso-table-lspace: 0pt;
             mso-table-rspace: 0pt;
         }
+
         p, a, li, td, blockquote {
             mso-line-height-rule: exactly;
         }
+
         a[href^=tel], a[href^=sms] {
             color: inherit;
             cursor: default;
             text-decoration: none;
         }
+
         p, a, li, td, body, table, blockquote {
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%;
         }
+
         a[x-apple-data-detectors] {
             color: inherit !important;
             text-decoration: none !important;
@@ -75,33 +87,43 @@ export const emailTemplate = minify(`
             font-weight: inherit !important;
             line-height: inherit !important;
         }
+
         #bodyCell {
             padding: 10px;
         }
+
         .templateContainer {
             max-width: 600px !important;
         }
+
         a.mcnButton {
             display: block;
         }
+
         .mcnImage, .mcnRetinaImage {
             vertical-align: bottom;
         }
+
         .mcnTextContent {
             word-break: break-word;
         }
+
         .mcnTextContent img {
             height: auto !important;
         }
+
         body, #bodyTable {
             background-color: #ffffff;
         }
+
         #bodyCell {
             border-top: 0;
         }
+
         .templateContainer {
             border: 0;
         }
+
         h3 {
             color: #202020;
             font-size: 16px;
@@ -111,6 +133,7 @@ export const emailTemplate = minify(`
             letter-spacing: normal;
             text-align: center;
         }
+
         h4 {
             color: #202020;
             font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -121,76 +144,90 @@ export const emailTemplate = minify(`
             letter-spacing: normal;
             text-align: center;
         }
+
         @media only screen and (min-width: 768px) {
             .templateContainer {
                 width: 600px !important;
             }
         }
+
         @media only screen and (max-width: 480px) {
             body, table, td, p, a, li, blockquote {
                 -webkit-text-size-adjust: none !important;
             }
         }
+
         @media only screen and (max-width: 480px) {
             body {
                 width: 100% !important;
                 min-width: 100% !important;
             }
         }
+
         @media only screen and (max-width: 480px) {
             #bodyCell {
                 padding-top: 10px !important;
             }
         }
+
         @media only screen and (max-width: 480px) {
             .mcnRetinaImage {
                 max-width: 100% !important;
             }
         }
+
         @media only screen and (max-width: 480px) {
             .mcnImage {
                 width: 100% !important;
             }
         }
+
         @media only screen and (max-width: 480px) {
             .mcnTextContentContainer, .mcnBoxedTextContentContainer, .mcnImageGroupContentContainer, .mcnCaptionLeftTextContentContainer, .mcnCaptionRightTextContentContainer, .mcnCaptionLeftImageContentContainer, .mcnCaptionRightImageContentContainer, .mcnImageCardLeftTextContentContainer, .mcnImageCardRightTextContentContainer, .mcnImageCardLeftImageContentContainer, .mcnImageCardRightImageContentContainer {
                 max-width: 100% !important;
                 width: 100% !important;
             }
         }
+
         @media only screen and (max-width: 480px) {
             .mcnBoxedTextContentContainer {
                 min-width: 100% !important;
             }
         }
+
         @media only screen and (max-width: 480px) {
             .mcnCaptionLeftContentOuter .mcnTextContent, .mcnCaptionRightContentOuter .mcnTextContent {
                 padding-top: 9px !important;
             }
         }
+
         @media only screen and (max-width: 480px) {
             .mcnImageCardTopImageContent, .mcnCaptionBottomContent:last-child .mcnCaptionBottomImageContent, .mcnCaptionBlockInner .mcnCaptionTopContent:last-child .mcnTextContent {
                 padding-top: 18px !important;
             }
         }
+
         @media only screen and (max-width: 480px) {
             .mcnTextContent {
                 padding-right: 18px !important;
                 padding-left: 18px !important;
             }
         }
+
         @media only screen and (max-width: 480px) {
             h3 {
                 font-size: 18px !important;
                 line-height: 125% !important;
             }
         }
+
         @media only screen and (max-width: 480px) {
             h4 {
                 font-size: 16px !important;
                 line-height: 150% !important;
             }
         }
+
         @media only screen and (max-width: 480px) {
             .mcnBoxedTextContentContainer .mcnTextContent, .mcnBoxedTextContentContainer .mcnTextContent p {
                 font-size: 14px !important;
@@ -237,7 +274,7 @@ text-align: center;">
                                 <td class="mcnTextContent" valign="top"
                                     style="padding: 18px 18px 0px;color: #F2F2F2;font-family: Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size: 48px;font-weight: normal;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;line-height: 150%;"
                                     width="546">
-                                    <span style="font-size:36px">Property Value&nbsp;<strong>Estimations</strong></span>
+                                    <span style="font-size:36px">Overview and Market Appraisal</span>
                                 </td>
                             </tr>
                             <tr>
@@ -261,18 +298,20 @@ text-align: center;">
                             style="text-align: left;display: block;margin: 0;padding: 0;color: #202020;font-size: 16px;font-style: normal;font-weight: normal;line-height: 150%;letter-spacing: normal;">
                             <br><br>
                             Dear {{name}},
-                            <br><br> 
+                            <br><br>
                             {{htmlContent}}
                         </h3>
 
                         <p style="text-align: left;">
                             <br>
-                            <span style="font-size:14px"><a
-                                    href="{{sharingLink}}"
-                                    style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #06a146;font-weight: normal;text-decoration: none;">Click here to view your valuation report</a><br>
-                                                    <br>
-                                                    <a href="{{overviewLink}}"
-                                                       style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #06a146;font-weight: normal;text-decoration: none;">Click here to view your Portfolio Management Services market overview</a></span>
+                            <span style="font-size:14px">
+                                <a href="{{sharingLink}}"
+                                   style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #06a146;font-weight: normal;text-decoration: none;">
+                                   Click here to view your market appraisal</a><br>
+                                <br>
+                                <a href="{{overviewLink}}"
+                                   style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #06a146;font-weight: normal;text-decoration: none;">
+                                   Click here to view your Portfolio Management Services market overview</a></span>
                         <p style="margin: 30px 0;color: #727272;font-size: 13px;text-align: left;">
                             <em>We estimate the value of your property&nbsp;by carefully
                                 assessing&nbsp;the market,&nbsp; yield, location and&nbsp;asset
@@ -361,6 +400,4 @@ text-align: center;">
 </table>
 </body>
 </html>
-` ,{
-
-});
+`, {});

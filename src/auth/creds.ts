@@ -12,7 +12,7 @@ const creds = {
   responseType: 'code',
   validateIssuer: isTrue(env.CREDS_VALIDATE_ISSUER), // For development only
   responseMode: 'query',
-  scope: ['User.Read', 'Mail.Send', 'Files.ReadWrite']
+  scope: ['User.Read', 'Mail.Send', 'Files.ReadWrite', 'offline_access', 'openid', 'profile']
 };
 console.log('creds redirectUrl: %s', prop('redirectUrl', creds));
 export { creds }
