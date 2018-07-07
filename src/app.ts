@@ -17,6 +17,8 @@ import {checkAuth} from './auth/app-check-auth';
 import {corsOptions} from "./corsOptions";
 
 import R = require('ramda');
+import {PassportRequest} from "./auth/passports";
+import {invalidateUserTokens} from "./auth/invalidateUserTokens";
 const { prop, path } = R;
 
 //import unless = require('express-unless');
@@ -54,11 +56,11 @@ app.use('/auth', auth);
 
 app.use('/graph', graph);
 
-const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
+const errorHandler = (err: Error, req: PassportRequest, res: Response, next: NextFunction) => {
   if (res.headersSent) {
     return next(err)
   }
-  const statusCode = +prop('status',err);
+  const statusCode = +path(['header', 'status'],err);
   // console.error('errorHandler originalUrl: %s, status: %s, req.logOut: %s, req.session.destroy: %s',
   //   prop('originalUrl', req), statusCode,  req.logOut, req.session.destroy);
   console.error('errorHandler originalUrl: %s, status: %s, err: %j',
@@ -66,18 +68,7 @@ const errorHandler = (err: Error, req: Request, res: Response, next: NextFunctio
 
   switch (statusCode) {
     case 401:
-
-      var refresh = require('passport-oauth2-refresh');
-      refresh.requestNewAccessToken('azure', 'some_refresh_token', (err:any, accessToken: string, refreshToken: string) => {
-        // You have a new access token, store it in the user object,
-        // or use it to make a new request.
-        // `refreshToken` may or may not exist, depending on the strategy you are using.
-        // You probably don't need it anyway, as according to the OAuth 2.0 spec,
-        // it should be the same as the initial refresh token.
-        console.log('errorHandler refreshToken: %s', refreshToken);
-        req.user.accessToken = refreshToken;
-      });
-
+      invalidateUserTokens(req);
       // console.log(' req.logOut instanceof Function: %s', req.logOut instanceof Function);
       // if(!!req.logOut) {
       //   req.logOut();
@@ -87,7 +78,6 @@ const errorHandler = (err: Error, req: Request, res: Response, next: NextFunctio
       //   req.session.destroy((_ => console.log('destroed the current session.')));
       // }
     default:
-
   }
 
   res.status(!!statusCode ? statusCode : 500)
