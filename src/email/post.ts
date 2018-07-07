@@ -12,10 +12,11 @@ const post = asyncHandler(async (req: PassportRequest, res: Response) => {
   const year: number = +prop('year', req.query),
     landlordNumber: number = +prop('number', req.query),
     email = prop('email', req.query),
-    name = prop('name', req.query);
+    name = prop('name', req.query),
+    contactName = prop('contactName', req.query);
 
-  console.log('get isAuthenticated: %s, user: %s, year: %s, landlordNumber: %s, email: %s, name: %s, body: %j',
-    isAuthenticated(req), req.user, year, landlordNumber, email, name, prop('body', req));
+  console.log('get isAuthenticated: %s, user: %s, year: %s, landlordNumber: %s, email: %s, name: %s, contactName: %s, body: %j',
+    isAuthenticated(req), req.user, year, landlordNumber, email, name, contactName, prop('body', req));
   const overviewLink = path(['body', 'overviewLink'], req);
   const content = path(['body', 'content'], req);
 
@@ -28,7 +29,7 @@ const post = asyncHandler(async (req: PassportRequest, res: Response) => {
 
   const newToken = await refreshToken(getRefreshToken(req), req);
 
-  const sent = await sendEmailWithContentAndLinks(getAccessToken(req), year, landlordNumber, email, name,
+  const sent = await sendEmailWithContentAndLinks(getAccessToken(req), year, landlordNumber, email, name, contactName,
     overviewLink, content);
 
   res.json(sent);

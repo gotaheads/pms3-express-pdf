@@ -44,11 +44,11 @@ const createPayload = (content: string, year: number, name: string, recipient: s
   };
 }
 
-const createMailBodyWithContent = (year: number, name: string, recipient: string, sharingLink: string,
+const createMailBodyWithContent = (year: number, name: string, contactName: string, recipient: string, sharingLink: string,
                         overviewLink: string, content: string,
                         file?: any): string => {
   return JSON.stringify(createPayload(
-    populateEmailContent(year, name, sharingLink, overviewLink, content),
+    populateEmailContent(year, contactName, sharingLink, overviewLink, content),
     year,
     name,
     recipient,

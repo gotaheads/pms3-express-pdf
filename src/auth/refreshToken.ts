@@ -45,6 +45,9 @@ const refreshToken= (refreshToken: string, req: PassportRequest): Promise<any> =
       console.log(body)
       req.user.accessToken = body.access_token;
       req.user.refreshToken = body.refresh_token;
+
+      console.log('refreshToken refreshed req.user.accessToken: %s, req.user.refreshToken: %s',
+        req.user.accessToken, req.user.refreshToken);
       return body;
     })
     .catch(err => {
