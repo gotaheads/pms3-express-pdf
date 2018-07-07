@@ -2,9 +2,7 @@ import {allowedOrigins} from "./allowedOrigins";
 
 const corsOptions = {
   origin: (origin: any, callback: Function) => {
-    console.log('cors origin: [%s], allowedOrigins: %j', origin, allowedOrigins, allowedOrigins.indexOf(origin))
-    // allow requests with no origin
-    // (like mobile apps or curl requests)
+    //console.log('cors origin: [%s], allowedOrigins: %j', origin, allowedOrigins, allowedOrigins.indexOf(origin))
     if(!origin) return callback(null, true);
 
     if(allowedOrigins.indexOf(origin) === -1 ){
@@ -20,3 +18,6 @@ const corsOptions = {
 }
 
 export { corsOptions }
+
+// allow requests with no origin
+// (like mobile apps or curl requests)

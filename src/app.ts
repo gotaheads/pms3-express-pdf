@@ -51,18 +51,15 @@ app.use(express.json());       // to support JSON-encoded bodies
 //app.use(express.urlencoded()); // to support URL-encoded bodies
 app.use('/email', checkAuth);
 app.use('/email', email);
-
 app.use('/auth', auth);
-
 app.use('/graph', graph);
 
 const errorHandler = (err: Error, req: PassportRequest, res: Response, next: NextFunction) => {
   if (res.headersSent) {
     return next(err)
   }
+
   const statusCode = +path(['header', 'status'],err);
-  // console.error('errorHandler originalUrl: %s, status: %s, req.logOut: %s, req.session.destroy: %s',
-  //   prop('originalUrl', req), statusCode,  req.logOut, req.session.destroy);
   console.error('errorHandler originalUrl: %s, status: %s, err: %j',
     prop('originalUrl', req), statusCode,  err);
 

@@ -5,23 +5,12 @@ const {prop, path} = R;
 import {creds} from './creds';
 import {PassportRequest} from "./passports";
 import {updateUserTokens} from "./updateUserTokens";
+import {chopToken} from "./chopToken";
 
 //https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols-oauth-code#refresh-the-access-token
 const refreshToken = (refreshToken: string, req: PassportRequest): Promise<PassportRequest> => {
-  console.log('refreshToken refreshToken: %s', refreshToken);
-
+  console.log('refreshToken refreshToken: %s', chopToken(refreshToken));
   const url = 'https://login.microsoftonline.com/common/oauth2/token';
-  const param = {
-    grant_type: 'refresh_token',
-    redirect_uri: creds.redirectUrl,
-    client_id: creds.clientID,
-    client_secret: creds.clientSecret,
-    scope: creds.scope,
-    refresh_token: refreshToken,
-    tenant: 'common'
-  }
-
-  console.log('refreshToken id: %s');
   return request
     .post(url)
     .type('form')
@@ -37,7 +26,7 @@ const refreshToken = (refreshToken: string, req: PassportRequest): Promise<Passp
       console.log(body);
       updateUserTokens(req, body.access_token, body.refresh_token);
       console.log('refreshToken refreshed req.user.accessToken: %s, req.user.refreshToken: %s',
-        req.user.accessToken, req.user.refreshToken);
+        chopToken(req.user.accessToken), chopToken(req.user.refreshToken));
       return req;
     })
     .catch(err => {

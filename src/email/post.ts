@@ -36,9 +36,9 @@ async function sendEmail(req: PassportRequest) {
   const overviewLink = path(['body', 'overviewLink'], req);
   const content = path(['body', 'content'], req);
 
-  console.log('sendEmail user: %s, year: %s, landlordNumber: %s, ' +
-    'email: %s, name: %s, contactName: %s, body: %j',
-    isAuthenticated(req), req.user, year, landlordNumber, email, name, contactName, prop('body', req));
+  console.log('sendEmail year: %s, landlordNumber: %s, ' +
+    'email: %s, name: %s, contactName: %s',
+    year, landlordNumber, email, name, contactName);
 
   const refreshed = await refreshToken(getRefreshToken(req), req);
   const sent = await sendEmailWithContentAndLinks(getAccessToken(refreshed),
@@ -47,7 +47,6 @@ async function sendEmail(req: PassportRequest) {
     overviewLink, content);
   return sent;
 }
-
 
 export { post }
 
