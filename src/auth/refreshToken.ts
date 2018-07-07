@@ -23,7 +23,6 @@ const refreshToken = (refreshToken: string, req: PassportRequest): Promise<Passp
     .send({tenant: 'common'})
     .then(res => {
       const body = res.body;
-      console.log(body);
       updateUserTokens(req, body.access_token, body.refresh_token);
       console.log('refreshToken refreshed req.user.accessToken: %s, req.user.refreshToken: %s',
         chopToken(req.user.accessToken), chopToken(req.user.refreshToken));

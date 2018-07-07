@@ -1,10 +1,8 @@
 import {Response} from "express";
 import * as asyncHandler from 'express-async-handler';
-import {getAccessToken, getRefreshToken, isAuthenticated} from "../auth/getAuthenticated";
 import {PassportRequest} from "../auth/passports";
+import {sendEmail} from "./sendEmail";
 import R = require('ramda');
-import {sendEmailWithContentAndLinks} from "./sendEmailWithContentAndLinks";
-import {refreshToken} from "../auth/refreshToken";
 
 const post = asyncHandler(async (req: PassportRequest, res: Response) => {
   try {
@@ -27,26 +25,6 @@ const post = asyncHandler(async (req: PassportRequest, res: Response) => {
 });
 const { isNil, prop, path } = R;
 
-async function sendEmail(req: PassportRequest) {
-  const year: number = +prop('year', req.query),
-    landlordNumber: number = +prop('number', req.query),
-    email = prop('email', req.query),
-    name = prop('name', req.query),
-    contactName = prop('contactName', req.query);
-  const overviewLink = path(['body', 'overviewLink'], req);
-  const content = path(['body', 'content'], req);
-
-  console.log('sendEmail year: %s, landlordNumber: %s, ' +
-    'email: %s, name: %s, contactName: %s',
-    year, landlordNumber, email, name, contactName);
-
-  const refreshed = await refreshToken(getRefreshToken(req), req);
-  const sent = await sendEmailWithContentAndLinks(getAccessToken(refreshed),
-    year,
-    landlordNumber, email, name, contactName,
-    overviewLink, content);
-  return sent;
-}
 
 export { post }
 
