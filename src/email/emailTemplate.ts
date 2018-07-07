@@ -347,7 +347,7 @@ text-align: center;">
                         <td align="center" valign="top" ">
                         <![endif]-->
                         <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%"
-                               style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+                               style="width: 100% !important; min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
                                class="mcnBoxedTextContentContainer">
                             <tbody>
                             <tr>
@@ -355,12 +355,12 @@ text-align: center;">
 
                                     <table border="0" cellspacing="0" class="mcnTextContentContainer"
                                            width="100%"
-                                           style="min-width: 100% !important;background-color: #BBCC2C;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                           style="width: 100% !important; min-width: 100% !important;background-color: #BBCC2C;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                         <tbody>
                                         <tr>
                                             <td valign="top" class="mcnTextContent"
-                                                style="padding: 18px;color: #222222;font-family: Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size: 14px;font-weight: normal;line-height: 125%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;">
-                                                <p style="min-width: 100% !important; color: #222222;font-family: Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size: 14px;font-weight: normal;line-height: 125%;text-align: center;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                style="width: 100% !important; padding: 18px;color: #222222;font-family: Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size: 14px;font-weight: normal;line-height: 125%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;">
+                                                <p style="width: 100% !important; min-width: 100% !important; color: #222222;font-family: Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size: 14px;font-weight: normal;line-height: 125%;text-align: center;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                     Suite 15, 150 Chestnut St, Richmond 3121<br>
                                                     <strong>t:</strong> 03 9621 1044&nbsp;
                                                     <strong>e:</strong> <a
