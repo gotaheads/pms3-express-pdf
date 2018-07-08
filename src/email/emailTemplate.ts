@@ -238,8 +238,9 @@ export const emailTemplate = minify(`
     </style><!--[if !mso]><!-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i" rel="stylesheet"><!--<![endif]-->
 </head>
-<body style="height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;
-text-align: center;">
+<body style="max-width: 600px !important; height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;
+text-align: center;
+font-family: Roboto, Helvetica, Arial, sans-serif !important;">
 <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
     <tr>
         <td align="center" valign="top" id="bodyCell"
@@ -253,11 +254,13 @@ text-align: center;">
             <table border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer">
                 <tr>
                     <td>
-                        <img align="center" alt=""
+                    
+                        <img align="center" alt="Overview and Market Appraisal"
                              src="https://gallery.mailchimp.com/af9680e06765bfe07890311e5/images/59ee9ca2-0193-492e-a969-e1344d463248.png"
                              width="600"
                              style="max-width: 1200px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;"
-                             class="mcnRetinaImage">
+                             class="mcnRetinaImage"
+                             >
 
                     </td>
                 </tr>
@@ -272,17 +275,17 @@ text-align: center;">
 
                             <tr>
                                 <td class="mcnTextContent" valign="top"
-                                    style="padding: 18px 18px 0px;color: #F2F2F2;font-family: Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size: 48px;font-weight: normal;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;line-height: 150%;"
-                                    width="546">
-                                    <span style="font-size:36px">Overview and Market Appraisal</span>
+                                    style="padding: 18px 18px 0px;color: #F2F2F2;font-family: Roboto;Helvetica Neue; Helvetica, Arial, sans-serif;font-size: 48px;font-weight: normal;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;line-height: 150%;"
+                                    width="600">
+                                    <span style="font-size:36px;font-family: Arial, sans-serif !important;">Overview and Market Appraisal</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="mcnImageCardTopImageContent" align="left" valign="top">
                                     <img alt=""
                                          src="https://gallery.mailchimp.com/af9680e06765bfe07890311e5/images/01173848-4b53-4cc8-9eac-59f591158c28.jpg"
-                                         width="100%"
-                                         style="max-width: 1500px;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bottom;"
+                                         width="600"
+                                         style="max-width: 600px;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bottom;"
                                          class="mcnImage">
                                 </td>
                             </tr>
@@ -341,51 +344,49 @@ text-align: center;">
                     </td>
                 </tr>
                 <tr>
-                    <td valign="top" class="mcnBoxedTextBlockInner"
-                        style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                        <!--[if gte mso 9]>
-                        <td align="center" valign="top" ">
-                        <![endif]-->
-                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%"
-                               style="width: 100% !important; min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
-                               class="mcnBoxedTextContentContainer">
-                            <tbody>
+                    <td valign="top" id="templateBody" style="background:#ffffff none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0px;">                
+
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnBoxedTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <!--[if gte mso 9]>
+                            <table align="center" border="0" cellspacing="0" cellpadding="0" width="100%">
+                            <![endif]-->
+                            <tbody class="mcnBoxedTextBlockOuter">
                             <tr>
-                                <td style="padding-top: 9px;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                <td valign="top" class="mcnBoxedTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 
-                                    <table border="0" cellspacing="0" class="mcnTextContentContainer"
-                                           width="100%"
-                                           style="width: 100% !important; min-width: 100% !important;background-color: #BBCC2C;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                        <tbody>
-                                        <tr>
-                                            <td valign="top" class="mcnTextContent"
-                                                style="width: 100% !important; padding: 18px;color: #222222;font-family: Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size: 14px;font-weight: normal;line-height: 125%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;">
-                                                <p style="width: 100% !important; min-width: 100% !important; color: #222222;font-family: Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size: 14px;font-weight: normal;line-height: 125%;text-align: center;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                    Suite 15, 150 Chestnut St, Richmond 3121<br>
-                                                    <strong>t:</strong> 03 9621 1044&nbsp;
-                                                    <strong>e:</strong> <a
-                                                        href="mailto:investment@portfolioms.com.au"
-                                                        target="_blank"
-                                                        style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #06a146;font-weight: normal;text-decoration: none;"><span
-                                                        style="color:#000000">investment@portfolioms.com.au</span></a>
-                                                </p>
+                                    <!--[if gte mso 9]>
+                                    <td align="center" valign="top" ">
+                                    <![endif]-->
+                                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnBoxedTextContentContainer">
+                                        <tbody><tr>
 
+                                            <td style="padding-top: 9px;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+
+                                                <table border="0" cellspacing="0" class="mcnTextContentContainer" width="100%" style="min-width: 100% !important;background-color: #BBCC2C;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                                    <tbody><tr>
+                                                        <td valign="top" class="mcnTextContent" style="padding: 18px;color: #222222;font-family: Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size: 14px;font-weight: normal;line-height: 125%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;">
+                                                            <p style="color: #222222;font-family: Roboto, Helvetica, Arial, sans-serif !important;font-size: 14px;font-weight: normal;line-height: 125%;text-align: center;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">Suite 15, 150 Chestnut St, Richmond 3121<br>
+                                                                <strong>t:</strong> 03 9621 1044&nbsp; <strong>e:</strong> <a href="mailto:investment@portfolioms.com.au" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #06a146;font-weight: normal;text-decoration: none;"><span style="color:#000000">investment@portfolioms.com.au</span></a></p>
+
+                                                        </td>
+                                                    </tr>
+                                                    </tbody></table>
                                             </td>
                                         </tr>
-                                        </tbody>
+                                        </tbody></table>
+                                    <!--[if gte mso 9]>
+                                    </td>
+                                    <![endif]-->
+
+                                    <!--[if gte mso 9]>
+                                    </tr>
                                     </table>
+                                    <![endif]-->
                                 </td>
                             </tr>
                             </tbody>
                         </table>
-                        <!--[if gte mso 9]>
-                        </td>
-                        <![endif]-->
 
-                        <!--[if gte mso 9]>
-                        </tr>
-                        </table>
-                        <![endif]-->
                     </td>
                 </tr>
             </table>
