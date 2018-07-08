@@ -25,6 +25,10 @@ const generator = async (year: number, landlordNumber: number) => {
 
   await savePdf(page2, path);
 
+  await page.goto('about:blank');
+  await page2.goto('about:blank');
+  
+  await browser.disconnect();
   await browser.close();
 
   return path;
