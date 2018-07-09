@@ -14,24 +14,29 @@ const generator = async (year: number, landlordNumber: number) => {
   const url = valuationReportByLandlordUrl(year, landlordNumber);
 
   const path = `/tmp/valuation-report-${year}-${landlordNumber}.pdf`;
+  let browser = await launchBrowser();
 
-  const browser = await launchBrowser();
+  try {
 
-  const page = await gotoApp(browser, loginUrl);
+    const page = await gotoApp(browser, loginUrl);
+    await login(page, env.USERNAME, env.PASSWORD);
+    const page2 = await generateReport(browser, url);
+    await savePdf(page2, path);
+    await page.goto('about:blank');
+    await page2.goto('about:blank');
+    await browser.disconnect();
+    await browser.close();
 
-  await login(page, env.USERNAME, env.PASSWORD);
+    return path;
 
-  const page2 = await generateReport(browser, url);
+  }catch (err) {
 
-  await savePdf(page2, path);
+    if(browser) {
+      await browser.close();
+      return '';
+    }
+  }
 
-  await page.goto('about:blank');
-  await page2.goto('about:blank');
-
-  await browser.disconnect();
-  await browser.close();
-
-  return path;
 };
 
 export { generator };
