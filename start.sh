@@ -1,5 +1,5 @@
 #!/bin/bash
-source ../pms-commons.sh
+source ../pms3-commons.sh
 init-nvm
 
 SCRIPT=./dist/server.js
