@@ -9,10 +9,10 @@ const post = asyncHandler(async (req: PassportRequest, res: Response) => {
     const sent = await sendEmail(req);
     res.json(sent);
   }catch (err){
-    const statusCode = +path(['header', 'status'],err);
-    const header = +path(['header'],err);
-    console.error('send email failed, status: %s, err: %j',
-      statusCode,  err);
+    const statusCode = +path(['err', 'status'],err);
+    const text = +path(['err', 'text'],err);
+    console.error('send email failed with status: %s, text: %s, err: %j',
+      statusCode, text,  err);
     switch (statusCode) {
       case 504:
       default:
